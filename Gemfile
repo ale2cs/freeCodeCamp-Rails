@@ -3,7 +3,6 @@ source "https://rubygems.org"
 ruby "3.2.2"
 gem "rails", "~> 7.1.2"
 gem "sprockets-rails"
-gem "sqlite3", "~> 1.4"
 gem "puma", ">= 5.0"
 gem "importmap-rails"
 gem "turbo-rails"
@@ -17,6 +16,11 @@ gem 'nokogiri', '~> 1.16'
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
+  gem "sqlite3", "~> 1.4"
+end
+
+group :production do
+  gem 'mysql2', '~> 0.5.5' 
 end
 
 group :development do
